@@ -9,10 +9,20 @@ import "math"
 
 // 思想:有序的数组,找到其中一个值
 
-// 时间复杂度
+// 时间复杂度: O(log2n)
+
+// 时间复杂度分析:
+/*
+	对于N个元素的情况,
+    1次2分   n/2
+    2次2分   n/4(2*2)
+    m次2分   n/(2^m)
+    最坏的情况下排除到最后一个才产生结果   1 =  n/2(^m)     n = 2^m   所以时间复杂度为:O(log2n)
+
+*/
 
 // 入参: 有序数组  & 要查找的值
-// 出参:
+// 出参: 所在数组的位置,若不存在返回 -1
 
 type DataStruct struct {
 	Data []int
@@ -39,9 +49,11 @@ func (data *DataStruct) binaryChopSearch(key int) int {
 	return mid
 }
 
+// 递归版本实现
+
 func main() {
 
-	res := DataStruct{[]int{1, 2, 3, 4, 5, 6, 7, 8}}
+	res := DataStruct{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}}
 	final := res.binaryChopSearch(2)
 	fmt.Println(final)
 
