@@ -69,7 +69,7 @@ func main() {
 	g.AddEdge(&n1, &n2)
 	g.AddEdge(&n1, &n5)
 	g.AddEdge(&n2, &n3)
-	g.AddEdge(&n2, &n4)
+	//g.AddEdge(&n2, &n4)
 	g.AddEdge(&n2, &n5)
 	g.AddEdge(&n3, &n4)
 	g.AddEdge(&n4, &n5)
