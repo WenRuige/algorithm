@@ -10,7 +10,7 @@ func isPowerOfFour(num int) bool {
 	if num == 1 {
 		return true
 	}
-	for num > 0 {
+	for num > 1 {
 		pop := num % 4
 		if pop > 1 && num == 4 {
 			return true
