@@ -4,19 +4,12 @@ import "fmt"
 
 func isPowerOfFour(num int) bool {
 
-	if num == 5 || num < 1 {
+	if num <= 0 {
 		return false
-	}
-	if num == 1 {
-		return true
 	}
 	for num > 1 {
 		pop := num % 4
-		if pop > 1 && num == 4 {
-			return true
-		} else if pop == 0 {
-			return true
-		} else {
+		if pop >= 1 {
 			return false
 		}
 		num = num / 4
@@ -25,6 +18,6 @@ func isPowerOfFour(num int) bool {
 }
 
 func main() {
-	res := isPowerOfFour(8)
+	res := isPowerOfFour(3)
 	fmt.Println(res)
 }
