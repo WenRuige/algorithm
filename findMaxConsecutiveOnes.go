@@ -3,26 +3,27 @@ package main
 import "fmt"
 
 func findMaxConsecutiveOnes(nums []int) int {
-	flag := 0
+	//flag := false
 	max := 0
-	for i := 0; i < len(nums)-1; i++ {
+	temp := 0
+	for i := 0; i < len(nums); i++ {
 		if nums[i] == 1 {
-			if nums[i] == nums[i+1] {
-				flag++
-				if max < flag {
-					max = flag
-				}
-			} else {
-				flag = 0
+			temp++
+			if temp >= max {
+				max = temp
 			}
+			//flag = true
+
+		} else {
+			//flag = false
+			temp = 0
 		}
 	}
-	//fmt.Println(max)
-	return 0
+	return max
 }
 
 func main() {
-	nums := []int{1, 1, 0, 1, 1, 1}
+	nums := []int{0}
 	res := findMaxConsecutiveOnes(nums)
 	fmt.Println(res)
 }
