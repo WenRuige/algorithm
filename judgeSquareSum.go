@@ -1,11 +1,23 @@
 package main
 
-func judgeSquareSum(c int) bool {
-	for i := 0; i < c; i++ {
+import (
+	"fmt"
+	"math"
+)
 
+func judgeSquareSum(c int) bool {
+	res := make(map[int]int)
+	for i := 0; i <= int(math.Ceil(math.Sqrt(float64(c)))); i++ {
+		res[i*i] = 1
+		_, ok := res[c-i*i]
+		if ok {
+			return true
+		}
 	}
+	return false
 }
 
 func main() {
-	judgeSquareSum(5)
+	res := judgeSquareSum(5)
+	fmt.Println(res)
 }

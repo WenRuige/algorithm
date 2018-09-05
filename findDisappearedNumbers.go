@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func findDisappearedNumbers(nums []int) []int {
 	//sort.Ints(nums)
 	newArr := []int{}
@@ -9,7 +11,7 @@ func findDisappearedNumbers(nums []int) []int {
 			nums[id] = -nums[id]
 		}
 	}
-
+	fmt.Println(nums)
 	for i := 0; i < len(nums); i++ {
 		if nums[i] > 0 {
 			newArr = append(newArr, i+1)
