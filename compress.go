@@ -5,6 +5,7 @@ import "fmt"
 func compress(chars []byte) int {
 	flag, total := 0, 0
 	for i := 0; i < len(chars); i++ {
+
 		if chars[i] == chars[i+1] {
 			flag++
 		} else {
