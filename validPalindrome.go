@@ -40,5 +40,5 @@ func validPalindrome(s string) bool {
 }
 
 func main() {
-	fmt.Println(validPalindrome("abca"))
+	fmt.Println(validPalindrome("abcaaaa"))
 }
