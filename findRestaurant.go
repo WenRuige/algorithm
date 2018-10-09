@@ -13,8 +13,6 @@ func findRestaurant(list1 []string, list2 []string) []string {
 		}
 	}
 
-	fmt.Println(newArr)
-
 	// 找出最小值
 	newStrArr := []string{}
 	min := 1 << 32
@@ -28,7 +26,6 @@ func findRestaurant(list1 []string, list2 []string) []string {
 		}
 	}
 	return newStrArr
-
 }
 
 func main() {
