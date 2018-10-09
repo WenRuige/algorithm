@@ -1,17 +1,17 @@
 package main
 
 func moveZeroes(nums []int) {
-	newArr := []int{}
-
-	for i := 0; i < len(nums); i++ {
-		if nums[i] != 0 {
-			newArr = append(newArr, nums[i])
+	fast, slow := 0, 0
+	for fast < len(nums) {
+		if nums[fast] != 0 {
+			nums[slow] = nums[fast]
+			slow++
 		}
+		fast++
 	}
-	for i := 0; i <= len(nums)-len(newArr); i++ {
-		newArr = append(newArr, 0)
+	for i := slow; i < len(nums); i++ {
+		nums[i] = 0
 	}
-	nums = newArr
 }
 
 func main() {
