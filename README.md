@@ -1,12 +1,6 @@
-######  新坑
+######  `leetcode`
 
 
-leetcode 刷题之路
+`leetcode` 刷题,采用`golang`实现
 
 
-
-
-
-
-
- golang 实现
