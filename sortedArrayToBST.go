@@ -49,14 +49,25 @@ func getTree(nums []int, l, r int) *TreeNode {
 	}
 }
 
-// 遍历二叉树
-func check(node *TreeNode) {
+// 前序遍历二叉树
+func preorder(node *TreeNode) {
 	fmt.Println(node.Val)
 	if node.Left != nil {
-		check(node.Left)
+		preorder(node.Left)
 	}
 	if node.Right != nil {
-		check(node.Right)
+		preorder(node.Right)
+	}
+}
+
+// 中序遍历二叉树
+func inorder(node *TreeNode) {
+	if node.Left != nil {
+		inorder(node.Left)
+	}
+	fmt.Println(node.Val)
+	if node.Right != nil {
+		inorder(node.Right)
 	}
 }
 
@@ -64,6 +75,6 @@ func main() {
 	nums := []int{-10, -3, 0, 5, 9}
 	res := sortedArrayToBST(nums)
 
-	check(res)
+	preorder(res)
 	fmt.Println(res)
 }
