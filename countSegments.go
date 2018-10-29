@@ -1,21 +1,27 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func countSegments(s string) int {
 	if len(s) == 0 {
 		return 0
 	}
-	total := 0
-	for i := 0; i < len(s); i++ {
-		if string(s[i]) == " " {
+	result := strings.Split(s, " ")
+	resultLen := len(result)
 
+	for i := 0; i < len(result); i++ {
+		if len(result[i]) == 0 {
+			resultLen--
 		}
 	}
-	return total + 1
+
+	return resultLen
 }
 
 func main() {
-	res := countSegments("       ")
+	res := countSegments("          ")
 	fmt.Println(res)
 }
