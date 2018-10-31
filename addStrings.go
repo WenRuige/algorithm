@@ -26,23 +26,23 @@ func addStrings(num1 string, num2 string) string {
 		int1, _ := strconv.Atoi(string(num1[i]))
 		int2, _ := strconv.Atoi(string(num2[i]))
 		if int1+int2+flag >= 10 {
-			if i == 0  {
+			if i == 0 {
 				newStr = fmt.Sprint((int1 + int2 + flag)) + newStr
+				fmt.Println(fmt.Sprint((int1 + int2 + flag)))
 			} else {
-				flag ++
-				newStr = fmt.Sprint((int1+int2)%10) + newStr
+				newStr = fmt.Sprint((int1+int2+flag)%10) + newStr
+				flag = 1
 			}
 		} else {
 			newStr = fmt.Sprint(int1+int2+flag) + newStr
 			flag = 0
 
 		}
-		//fmt.Println(newStr)
 	}
 	return newStr
 }
 
 func main() {
-	res := addStrings("999", "999")
+	res := addStrings("99", "999")
 	fmt.Println(res)
 }
