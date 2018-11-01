@@ -10,7 +10,7 @@ func getRow(rowIndex int) []int {
 			if j == 0 || j == i {
 				tmp = append(tmp, 1)
 			} else {
-				//计算上一行的树
+				//计算上一行的数
 				res := result[i-1][j] + result[i-1][j-1]
 				tmp = append(tmp, res)
 			}
