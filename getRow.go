@@ -2,7 +2,7 @@ package main
 
 // 杨辉三角
 func getRow(rowIndex int) []int {
-	//构造外围
+	//构造
 	result := [][]int{{1}, {1, 1}}
 	for i := 2; i <= rowIndex; i++ {
 		tmp := []int{}
